@@ -14,7 +14,7 @@
         <div class="post-content" itemprop="articleBody">
             <?php $this->content(); ?>
         </div>
-        <p itemprop="keywords" class="tags"><?php $this->tags(' ', true, 'none'); ?></p>
+        <p itemprop="keywords" class="tags"><?php $this->tags(' ', true, '<a href="#" >none</a>'); ?></p>
     </article>
 
     <?php $this->need('comments.php'); ?>
