@@ -5,7 +5,7 @@
 <footer id="footer" role="contentinfo">
 
 	&copy; 2017 - <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
-	<br/>浙ICP备19006255号-1
+	<br/><?php if ($this->options->icpNum) { $this->options->icpNum(); }?>
 	<!-- <?php _e('由 <a href="http://www.typecho.org">Typecho</a> 强力驱动'); ?>. -->
 
 </footer><!-- end #footer -->
@@ -21,8 +21,9 @@
 	</div>
 
 </div><!-- end #body -->
-
+<?php if ($this->options->EnableBusuanzi == 'able' ): ?>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<?php endif; ?>
 <!-- <style>.MathJax:focus {outline: none;}</style>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -39,16 +40,13 @@ MathJax.Hub.Config({
 <script src="https://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
 <!-- <script src="<?php $this->options->themeUrl('ripple.js'); ?>"></script> -->
 <script> hljs.initHighlightingOnLoad(); </script>
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-	var hm = document.createElement("script");
-	hm.src = "https://hm.baidu.com/hm.js?d8c0a4185322e94013582201484f9131";
-	var s = document.getElementsByTagName("script")[0]; 
-	s.parentNode.insertBefore(hm, s);
-})();
-</script>
+<?php if ($this->options->hideStatCode == 'able' ): ?>
+	<div style="display:none">
+<?php endif; ?>
+<?php if ($this->options->statCode) { $this->options->statCode(); }?>
+<?php if ($this->options->hideStatCode == 'able'): ?>
+	</div>
+<?php endif; ?>
 
 <?php $this->footer(); ?>
 </body>
