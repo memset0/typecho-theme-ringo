@@ -2,6 +2,20 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 function themeConfig($form) {
+    $version = '0.0.5';
+    //更友好的界面
+    _e('<div id="typecho-welcome">
+            <h3>欢迎使用<a href="https://github.com/memset0/typecho-theme-ringo">Typecho Theme Ringo</a>！ <img src="https://img.shields.io/github/stars/memset0/typecho-theme-ringo.svg?style=social"></h3>
+            <li> Brought You By <a href="https://github.com/abc1763613206">abc1763613206</a> and <a href="https://memset0.cn">memset0</a> </li>
+            <ul>
+                <li> <img src="https://img.shields.io/badge/Version-'.$version.'-green.svg?style=flat-square"> <a href="https://github.com/memset0/typecho-theme-ringo"><img src="https://img.shields.io/github/release/memset0/typecho-theme-ringo.svg?style=flat-square" alt="https://img.shields.io/github/release/memset0/typecho-theme-ringo.svg?style=flat-square" ></a> </li> 
+                <li> 请在下方进行您的主题设置。<b>务必将每一个单选框都设定一遍</b>以保证在之后的使用中不会出问题。 </li>
+                <li> 有问题请在 Github Issues 中反馈：<a href="https://github.com/memset0/typecho-theme-ringo/issues"> https://github.com/memset0/typecho-theme-ringo/issues</a>  </li>
+            </ul> 
+        </div>
+        ');
+
+
     //header 相关
 
     $displayTitle = new Typecho_Widget_Helper_Form_Element_Text(
@@ -10,7 +24,7 @@ function themeConfig($form) {
         NULL,
         _t('显示站点标题'),
         _t('
-            <p class="description">在这里填入在侧边栏显示的站点标题，如不设置 <b>默认为当前站点标题</b> ，可以通过插入 <code>&lt;br /&gt;</code> 换行！</p>
+            <p class="description">在这里填入在侧边栏显示的站点标题，如不设置 <b>默认为当前站点标题</b> ，可以通过插入 <code>&lt;br&gt;</code> 换行！</p>
             <p class="description"><b>建议一行内不超过 10 字符以确保最佳体验</b></p>
         ')
     );
@@ -22,7 +36,7 @@ function themeConfig($form) {
         NULL,
         _t('显示站点描述'),
         _t('
-            <p class="description">在这里填入在侧边栏显示的站点副标题（站点标题下方一行灰色小字），如不设置 <b>默认为站点描述</b> ，可以通过插入 <code>&lt;br /&gt;</code> 换行！
+            <p class="description">在这里填入在侧边栏显示的站点副标题（站点标题下方一行灰色小字），如不设置 <b>默认为站点描述</b> ，可以通过插入 <code>&lt;br&gt;</code> 换行！
             <p class="description"><b>建议一行内不超过 10 字符以确保最佳体验</b></p>
         ')
     );
@@ -41,6 +55,19 @@ function themeConfig($form) {
     $form->addInput($logoUrl->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
 
     //footer 相关
+    
+    $IfDisplayPages = new Typecho_Widget_Helper_Form_Element_Radio('IfDisplayPages', array('able' => _t('显示'),
+            'disable' => _t('不显示'),
+        ),
+        'able',
+        _t('是否在侧边栏显示创建的页面'),
+        _t('
+            <p class="description">是否显示侧边栏的页面（多用于关于&&友情链接），<b>默认显示</b></p>
+        ')
+    );
+    $form->addInput($IfDisplayPages);
+    
+    
     $icpNum = new Typecho_Widget_Helper_Form_Element_Text('icpNum', NULL, NULL, _t('网站备案号'), _t('在这里填入中国大陆的ICP网站备案号（无需带a标签，如 <b>浙ICP备19006255号-1</b> ），留空则不显示'));
     $form->addInput($icpNum);
     $statCode = new Typecho_Widget_Helper_Form_Element_Text('statCode', NULL, NULL, _t('站点统计代码'), _t('在这里填入 <b>带 script 标签的</b> 站点统计代码，留空则不显示。（建议您对代码进行简单的压缩）'));
@@ -94,6 +121,7 @@ function themeConfig($form) {
         ')
     );
     $form->addInput($IfDisplayNone);
+
 
     //现阶段下该设置基本无用，注释掉好了
     /*

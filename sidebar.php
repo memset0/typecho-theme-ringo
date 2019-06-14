@@ -1,6 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <div id="sidebar" role="complementary">
-
+    <?php if ($this->options->IfDisplayPages == 'able' ): ?>
     <section class="widget">
         <ul class="widget-list">
             <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
@@ -9,7 +9,8 @@
             <?php endwhile; ?>
         </ul>
     </section>
-    
+    <?php endif ?>
+
 	<section class="widget sidebar-foot">
         <ul class="widget-list">
             <li>Proudly powered by <a rel="nofollow" target="_blank" href="http://www.typecho.org">Typecho</a></li>
