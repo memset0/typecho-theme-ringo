@@ -4,7 +4,7 @@
  * 
  * @package Ringo
  * @author memset0
- * @version 0.0.1
+ * @version 0.0.2
  * @link https://memset0.cn
  */
 
