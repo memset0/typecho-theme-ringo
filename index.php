@@ -4,7 +4,7 @@
  * 
  * @package typecho-theme-ringo
  * @author memset0
- * @version 0.0.3
+ * @version 0.0.4
  * @link https://memset0.cn
  */
 

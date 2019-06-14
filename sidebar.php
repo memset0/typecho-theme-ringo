@@ -1,5 +1,15 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <div id="sidebar" role="complementary">
+
+    <section class="widget">
+        <ul class="widget-list">
+            <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
+            <?php while($pages->next()): ?>
+            <li><a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a></li>
+            <?php endwhile; ?>
+        </ul>
+    </section>
+    
 	<section class="widget sidebar-foot">
         <ul class="widget-list">
             <li>Proudly powered by <a rel="nofollow" target="_blank" href="http://www.typecho.org">Typecho</a></li>
