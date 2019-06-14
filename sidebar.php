@@ -5,9 +5,13 @@
             <li>Proudly powered by <a href="http://www.typecho.org">Typecho</a></li>
             <li>Theme designed by <a href="https://memset0.cn">memset0</a></li>
             <li>
+                <?php if ($this->options->EnableBusuanzi == 'able' ): ?>
                 <span id="busuanzi_value_site_pv">......</span> visits ·
                 <span id="busuanzi_value_site_uv">......</span> visitors ·
+                <?php endif; ?>
+                <?php if ($this->options->EnableWordsCounter == 'able' ): ?>
                 <span id="words_counter"><?php WordsCounter_Plugin::allOfCharacters(); ?></span> words
+                <?php endif; ?>
             </li>
         </ul>
     </section>
