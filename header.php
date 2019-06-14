@@ -2,7 +2,9 @@
 <!DOCTYPE HTML>
 <html class="no-js">
 <head>
-
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="//secure.gravatar.com" />
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info" />
     <meta charset="<?php $this->options->charset(); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
