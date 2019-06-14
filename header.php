@@ -43,12 +43,11 @@
             </a>
         <?php else: ?>
             <a id="logo" class="site-title">
-                <!-- <?php $this->options->title() ?> -->
-                memset0's<br />Notebook
+                <?php if ($this->options->displayTitle) { $this->options->displayTitle(); }else{ $this->options->title();}?> 
             </a>
             <p class="description site-description">
                 <!-- <?php $this->options->description() ?> -->
-                半醒半醉日复日<br />花开花落年复年
+                <?php if ($this->options->displayCoTitle) { $this->options->displayCoTitle(); }else{ $this->options->description();}?>
             </p>
         <?php endif; ?>
         </div>
