@@ -9,12 +9,16 @@
             <li><?php $this->category(','); ?></li>
             <?php if($this->user->hasLogin()):?>
             <li><a href="<?php $this->options->adminUrl(); ?>write-post.php?cid=<?php echo $this->cid;?>">编辑</a></li>
-            <?php endif;?>
+            <?php endif ?>
         </ul>
         <div class="post-content" itemprop="articleBody">
             <?php $this->content(); ?>
         </div>
+        <?php if ($this->options->IfDisplayNone == 'disable' ): ?>
+        <p itemprop="keywords" class="tags"><?php $this->tags(' ', true, ''); ?></p>
+        <?php else: ?>
         <p itemprop="keywords" class="tags"><?php $this->tags(' ', true, '<a href="#" >none</a>'); ?></p>
+        <?php endif; ?>
     </article>
 
     <?php $this->need('comments.php'); ?>

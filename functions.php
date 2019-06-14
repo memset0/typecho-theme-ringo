@@ -38,6 +38,12 @@ function themeConfig($form) {
         'disable', _t('是否启用<a rel="nofollow" href="https://github.com/elatisy/Typecho_WordsCounter">WordsCounter</a>'), _t('与插件<a rel="nofollow" href="WordsCounter">Typecho_WordsCounter</a>，配合使用，可以统计文章字数。<b>默认停用</b>，<b>启用前请务必确保您安装启用好了这个插件！</b>'));
     $form->addInput($EnableWordsCounter);
 
+    $IfDisplayNone = new Typecho_Widget_Helper_Form_Element_Radio('IfDisplayNone', array('able' => _t('显示'),
+            'disable' => _t('不显示'),
+        ),
+        'able', _t('是否显示 none 标签'),_t('<p class="description">是否显示文章中的 none 标签，<b>默认显示</b><p class="description">Typecho 的文章如果没有标签，默认会显示一个无样式的 none 。</p><p class="description">本主题已经对none标签进行了特殊优化使其更加美观，当然你也可以直接将其移除。'));
+    $form->addInput($IfDisplayNone);
+
     //现阶段下该设置基本无用，注释掉好了
     /*
     $sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock', 
