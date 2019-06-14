@@ -29,8 +29,9 @@
     <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css'); ?>">
     <!-- <link rel="stylesheet" href="<?php $this->options->themeUrl('ripple.css'); ?>"> -->
     <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Cinzel Decorative:700"> -->
+    <?php if ($this->options->EnableHighlightJS == 'able' ): ?>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/highlight.js@latest/styles/atom-one-light.css">
-
+    <?php endif; ?>
     <!--[if lt IE 9]>
     <script src="//cdn.jsdelivr.net/gh/aFarkas/html5shiv@latest/dist/html5shiv.min.js"></script>
     <script src="//cdn.jsdelivr.net/gh/scottjehl/Respond@latest/dest/respond.min.js"></script>
