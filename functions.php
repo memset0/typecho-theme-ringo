@@ -64,10 +64,10 @@ function themeConfig($form) {
             <p class="description">是否显示侧边栏的页面（多用于关于&&友情链接），<b>默认显示</b></p>
         ')
     );
-    $form->addInput($IfDisplayPages);
+    $form->addInput($IfDisplayPages->addRule('required', _t('此处必须设置')));
     
     
-    $icpNum = new Typecho_Widget_Helper_Form_Element_Text('icpNum', NULL, NULL, _t('网站备案号'), _t('在这里填入中国大陆的ICP网站备案号（无需带a标签，如 <b>浙ICP备19006255号-1</b> ），留空则不显示'));
+    $icpNum = new Typecho_Widget_Helper_Form_Element_Text('icpNum', NULL, NULL, _t('网站备案号'), _t('在这里填入中国大陆的ICP网站备案号（无需带a标签，如 <code>浙ICP备19006255号-1</code> ），留空则不显示'));
     $form->addInput($icpNum);
 
     $startYear = new Typecho_Widget_Helper_Form_Element_Text('startYear', NULL, '2017', _t('网站建立年份'), _t('在这里填入您网站建立年份（显示在页面底部），<b>必须填写</b>'));
@@ -84,10 +84,20 @@ function themeConfig($form) {
             <p class="description"><b>现阶段暂没有对显示内容的统计标志做特别优化，因而会出现显示错乱的问题，建议隐藏。</b></p>
         ')
     );
-    $form->addInput($hideStatCode);
+    $form->addInput($hideStatCode->addRule('required', _t('此处必须设置')));
 
     //附加功能相关
-    
+    $EnableHighlightJS = new Typecho_Widget_Helper_Form_Element_Radio('EnableHighlightJS', array('able' => _t('启用'),
+            'disable' => _t('停用'),
+        ),
+        'able',
+        _t('是否启用 HighlightJS 代码高亮功能'),
+        _t('
+            <p class="description">HighlightJS 代码高亮插件，使用<code>atom-one-light</code>。<b>默认启用</b></p>
+        ')
+    );
+    $form->addInput($EnableHighlightJS->addRule('required', _t('此处必须设置')));
+
     $EnableBusuanzi = new Typecho_Widget_Helper_Form_Element_Radio('EnableBusuanzi', array('able' => _t('启用'),
             'disable' => _t('停用'),
         ),
@@ -97,7 +107,7 @@ function themeConfig($form) {
             <a rel="nofollow" target="_blank" href="https://busuanzi.ibruce.info/">不蒜子</a>是一个即装即用的网页 js 计数脚本，目前可与主题进行对接显示访问数，<b>默认启用</b>
         ')
     );
-    $form->addInput($EnableBusuanzi);
+    $form->addInput($EnableBusuanzi->addRule('required', _t('此处必须设置')));
 
     $EnableWordsCounter = new Typecho_Widget_Helper_Form_Element_Radio('EnableWordsCounter', array('able' => _t('启用'),
             'disable' => _t('停用'),
@@ -109,7 +119,7 @@ function themeConfig($form) {
             <p class="description"><b>启用前请务必确保您安装启用好了这个插件！</b></p>
         ')
     );
-    $form->addInput($EnableWordsCounter);
+    $form->addInput($EnableWordsCounter->addRule('required', _t('此处必须设置')));
 
     $IfDisplayNone = new Typecho_Widget_Helper_Form_Element_Radio('IfDisplayNone', array('able' => _t('显示'),
             'disable' => _t('不显示'),
@@ -122,7 +132,7 @@ function themeConfig($form) {
             <p class="description">本主题已经对 none 标签进行了特殊优化使其更加美观，当然你也可以直接将其移除</p>
         ')
     );
-    $form->addInput($IfDisplayNone);
+    $form->addInput($IfDisplayNone->addRule('required', _t('此处必须设置')));
 
 
     //现阶段下该设置基本无用，注释掉好了
