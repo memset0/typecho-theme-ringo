@@ -2,6 +2,7 @@
 <!DOCTYPE HTML>
 <html class="no-js">
 <head>
+
     <meta charset="<?php $this->options->charset(); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
@@ -13,8 +14,7 @@
             'author'    =>  _t('%s 发布的文章')
         ), '', ' - '); ?><?php $this->options->title(); ?></title>
 
-    <!-- 使用url函数转换相关路径 -->
-    <!-- <link rel="stylesheet" href="//cdnjscn.b0.upaiyun.com/libs/normalize/2.1.3/normalize.min.css"> -->
+    <link rel="stylesheet" href="//cdnjscn.b0.upaiyun.com/libs/normalize/2.1.3/normalize.min.css">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('grid.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css'); ?>">
     <!-- <link rel="stylesheet" href="<?php $this->options->themeUrl('ripple.css'); ?>"> -->
@@ -26,10 +26,10 @@
     <script src="//cdnjscn.b0.upaiyun.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
-    <!-- 通过自有函数输出HTML头部信息 -->
     <?php $this->header(); ?>
 </head>
 <body>
+
 <!--[if lt IE 8]>
     <div class="browsehappy" role="dialog"><?php _e('当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>'); ?>.</div>
 <![endif]-->
@@ -46,7 +46,6 @@
                 <?php if ($this->options->displayTitle) { $this->options->displayTitle(); }else{ $this->options->title();}?> 
             </a>
             <p class="description site-description">
-                <!-- <?php $this->options->description() ?> -->
                 <?php if ($this->options->displayCoTitle) { $this->options->displayCoTitle(); }else{ $this->options->description();}?>
             </p>
         <?php endif; ?>

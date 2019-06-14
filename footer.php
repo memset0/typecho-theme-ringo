@@ -6,7 +6,6 @@
 
 	&copy; 2017 - <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
 	<br/><?php if ($this->options->icpNum) { $this->options->icpNum(); }?>
-	<!-- <?php _e('由 <a href="http://www.typecho.org">Typecho</a> 强力驱动'); ?>. -->
 
 </footer><!-- end #footer -->
 

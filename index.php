@@ -2,9 +2,9 @@
 /**
  * 你愿意，等我回来吗？
  * 
- * @package Ringo
+ * @package typecho-theme-ringo
  * @author memset0
- * @version 0.0.2
+ * @version 0.0.3
  * @link https://memset0.cn
  */
 

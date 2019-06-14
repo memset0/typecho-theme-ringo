@@ -2,8 +2,8 @@
 <div id="sidebar" role="complementary">
 	<section class="widget sidebar-foot">
         <ul class="widget-list">
-            <li>Proudly powered by <a href="http://www.typecho.org">Typecho</a></li>
-            <li>Theme designed by <a href="https://memset0.cn">memset0</a></li>
+            <li>Proudly powered by <a rel="nofollow" target="_blank" href="http://www.typecho.org">Typecho</a></li>
+            <li>Theme <a rel="nofollow" target="_blank" href="https://github.com/memset0/typecho-theme-ringo">Ringo</a> by <a rel="nofollow" target="_blank" href="https://memset0.cn">memset0</a></li>
             <li>
                 <?php if ($this->options->EnableBusuanzi == 'able' ): ?>
                 <span id="busuanzi_value_site_pv">......</span> visits ·
