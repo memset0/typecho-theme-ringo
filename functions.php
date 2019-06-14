@@ -7,7 +7,7 @@ function themeConfig($form) {
             <h3>欢迎使用<a href="https://github.com/memset0/typecho-theme-ringo">Typecho Theme Ringo</a>！ <img src="https://img.shields.io/github/stars/memset0/typecho-theme-ringo.svg?style=social"></h3>
             <li> Brought You By <a href="https://github.com/abc1763613206">abc1763613206</a> and <a href="https://memset0.cn">memset0</a> </li>
             <ul>
-                <li>当前最新版本 <a><img src="https://img.shields.io/github/release/memset0/typecho-theme-ringo.svg?style=flat-square" alt="https://img.shields.io/github/release/memset0/typecho-theme-ringo.svg?style=flat-square" ></a> </li> 
+                <li>当前最新版本 <a href="https://github.com/memset0/typecho-theme-ringo"><img src="https://img.shields.io/github/release/memset0/typecho-theme-ringo.svg?style=flat-square" alt="https://img.shields.io/github/release/memset0/typecho-theme-ringo.svg?style=flat-square" ></a> </li> 
                 <li> 请在下方进行您的主题设置。<b>务必将每一个单选框都设定一遍</b>以保证在之后的使用中不会出问题。 </li>
                 <li> 有问题请在 Github Issues 中反馈：<a href="https://github.com/memset0/typecho-theme-ringo/issues"> https://github.com/memset0/typecho-theme-ringo/issues</a>  </li>
             </ul> 
