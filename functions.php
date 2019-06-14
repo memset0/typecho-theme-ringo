@@ -69,6 +69,9 @@ function themeConfig($form) {
     
     $icpNum = new Typecho_Widget_Helper_Form_Element_Text('icpNum', NULL, NULL, _t('网站备案号'), _t('在这里填入中国大陆的ICP网站备案号（无需带a标签，如 <b>浙ICP备19006255号-1</b> ），留空则不显示'));
     $form->addInput($icpNum);
+
+    $startYear = new Typecho_Widget_Helper_Form_Element_Text('startYear', NULL, '2017', _t('网站建立年份'), _t('在这里填入您网站建立年份（显示在页面底部），<b>必须填写</b>'));
+    $form->addInput($startYear->addRule('required', _t('此处必须填写')));
     $statCode = new Typecho_Widget_Helper_Form_Element_Text('statCode', NULL, NULL, _t('站点统计代码'), _t('在这里填入 <b>带 script 标签的</b> 站点统计代码，留空则不显示。（建议您对代码进行简单的压缩）'));
     $form->addInput($statCode);
     $hideStatCode = new Typecho_Widget_Helper_Form_Element_Radio('hideStatCode', array('able' => _t('隐藏'),
