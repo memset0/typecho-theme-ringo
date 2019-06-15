@@ -5,7 +5,7 @@
 <footer id="footer" role="contentinfo">
 
 	&copy; <?php _e($this->options->startYear) ?> - <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
-	<br/><?php if ($this->options->icpNum) { $this->options->icpNum(); }?>
+	<br/> <?php if ($this->options->icpNum):?> <a rel="nofollow" href="http://beian.miit.gov.cn"> <?php $this->options->icpNum(); ?> </a> <?php endif;?>
 
 </footer><!-- end #footer -->
 
