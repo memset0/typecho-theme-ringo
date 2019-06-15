@@ -33,9 +33,6 @@
     <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css'); ?>">
     <!-- <link rel="stylesheet" href="<?php $this->options->themeUrl('ripple.css'); ?>"> -->
     <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Cinzel Decorative:700"> -->
-    <?php if ($this->options->EnableHighlightJS == 'able' ): ?>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/highlight.js@latest/styles/atom-one-light.css">
-    <?php endif; ?>
     <!--[if lt IE 9]>
     <script src="//cdn.jsdelivr.net/gh/aFarkas/html5shiv@latest/dist/html5shiv.min.js"></script>
     <script src="//cdn.jsdelivr.net/gh/scottjehl/Respond@latest/dest/respond.min.js"></script>
@@ -49,8 +46,18 @@
     <div class="browsehappy" role="dialog"><?php _e('当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>'); ?>.</div>
 <![endif]-->
 
+<!-- 移动端适配 -->
+<link rel="stylesheet" href="<?php $this->options->themeUrl('compatible.css'); ?>">
 
-
+<!-- 也显示出一遍正常标题来以便适配移动端 -->
+<div style="display:none" class="compatible">
+            <a id="logo" class="site-title">
+                <?php $this->options->title();?> 
+            </a>
+            <p class="description site-description">
+                <?php $this->options->description();?>
+            </p>
+</div>
 
 <header id="header" class="clearfix" onclick="window.open('<?php $this->options->siteUrl(); ?>','_self')">
     <div class="container">
@@ -67,7 +74,9 @@
                 <?php if ($this->options->displayCoTitle) { $this->options->displayCoTitle(); }else{ $this->options->description();}?>
             </p>
         <?php endif; ?>
-        </div>
+
+        
+        
         <!-- <div class="col-mb-12">
             <nav id="nav-menu" class="clearfix" role="navigation">
                 <a <?php if($this->is('index')): ?> class="current"<?php endif; ?> href="<?php $this->options->siteUrl(); ?>"><?php _e('首页'); ?></a>
