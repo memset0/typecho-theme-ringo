@@ -94,17 +94,7 @@ function themeConfig($form) {
     $form->addInput($hideStatCode->addRule('required', _t('此处必须设置')));
 
     //附加功能相关
-    $EnableHighlightJS = new Typecho_Widget_Helper_Form_Element_Radio('EnableHighlightJS', array(
-            'able' => _t('启用'),
-            'disable' => _t('停用'),
-        ),
-        'able',
-        _t('是否启用 HighlightJS 代码高亮功能'),
-        _t('
-            <p class="description">HighlightJS 代码高亮插件，使用<code>atom-one-light</code>。<b>默认启用</b></p>
-        ')
-    );
-    $form->addInput($EnableHighlightJS->addRule('required', _t('此处必须设置')));
+
 
     $EnableBusuanzi = new Typecho_Widget_Helper_Form_Element_Radio('EnableBusuanzi', array(
             'able' => _t('启用'),
@@ -123,9 +113,9 @@ function themeConfig($form) {
             'disable' => _t('停用'),
         ),
         'disable',
-        _t('是否启用 <a rel="nofollow" target="_blank" href="https://github.com/elatisy/Typecho_WordsCounter">WordsCounter</a> 功能'),
+        _t('是否启用 <a rel="nofollow" target="_blank" href="https://github.com/elatisy/Typecho_WordsCounter">WordsCounter</a> 适配功能'),
         _t('
-            <p class="description">与插件 <a rel="nofollow" href="https://github.com/elatisy/Typecho_WordsCounter">WordsCounter</a> ，配合使用，可以统计文章字数。<b>默认停用</b></p>
+            <p class="description">与插件 <a rel="nofollow" href="https://github.com/elatisy/Typecho_WordsCounter">WordsCounter</a> 配合使用，显示在侧边栏下方，可以统计文章字数。<b>默认停用</b></p>
             <p class="description"><b>启用前请务必确保您安装启用好了这个插件！</b></p>
         ')
     );

@@ -35,11 +35,9 @@ MathJax.Hub.Config({
 </script>
 <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
 
-<?php if ($this->options->EnableHighlightJS == 'able' ): ?>
-<script src="//cdn.jsdelivr.net/npm/highlight.js@latest/highlight.min.js"></script>
-<!-- <script src="<?php $this->options->themeUrl('ripple.js'); ?>"></script> -->
-<script> hljs.initHighlightingOnLoad(); </script>
-<?php endif; ?>
+
+
+
 
 <?php if ($this->options->hideStatCode == 'able' ): ?>
 	<div style="display:none">
