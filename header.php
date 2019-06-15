@@ -49,7 +49,7 @@
     <div class="browsehappy" role="dialog"><?php _e('当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>'); ?>.</div>
 <![endif]-->
 
-<noscript><div class="browsehappy" role="dialog">当前网页 <strong>需要 JavaScript</strong>.看上去您的 JavaScript 被禁用了或是您浏览器的版本太老.</a></noscript>
+
 
 
 <header id="header" class="clearfix" onclick="window.open('<?php $this->options->siteUrl(); ?>','_self')">

@@ -36,12 +36,12 @@ pre,code {
 }
 
 code {
-	padding: 2px 4px;
+	padding: 0.125em  0.25em;
 	color: #B94A48;
 }
 
 pre {
-	padding: 8px;
+	padding: 0.5em;
 	overflow: auto;
 	max-height: 400px;
 }
@@ -54,7 +54,7 @@ pre code {
 blockquote {
 	margin: 1em 0;
 	padding-left: 1.5em;
-	border-left: 4px solid #ddd;
+	border-left: 0.25em solid #ddd;
 	color: #666;
 }
 
@@ -101,7 +101,7 @@ textarea {
 */
 
 .browsehappy {
-	padding: 8px 0;
+	padding: 0.5em 0;
 	background: #FBE3E4;
 	color: #8A1F11;
 	text-align: center;
@@ -165,7 +165,7 @@ textarea {
 
 #search button {
 	position: absolute;
-	right: 4px;
+	right: 0.25em;
 	top: 2px;
 	border: none;
 	padding: 0;
@@ -205,7 +205,7 @@ textarea {
 
 .post-meta li {
 	display: inline-block;
-	margin: 0 8px 0 0;
+	margin: 0 0.5em 0 0;
 	padding-left: 12px;
 	border-left: 1px solid #EEE;
 }
@@ -263,7 +263,7 @@ textarea {
 
 .page-navigator li {
 	display: inline-block;
-	margin: 0 4px;
+	margin: 0 0.25em;
 }
 
 .page-navigator a {
@@ -412,7 +412,7 @@ textarea {
 .post-content a img,.comment-content a img {
 	background: #FFF;
 	position: relative;
-	bottom: -4px;
+	bottom: -0.25em;
 }
 
 .post-content hr,.comment-content hr {
@@ -586,7 +586,7 @@ img.alignright {
 	width: 100%;
 	color: #333;
 	background: #fff;
-	padding: 8px;
+	padding: 0.5em;
 	transition: 0.25s;
 	border: none;
 	border-top: 1px solid #EEE;
@@ -595,8 +595,8 @@ img.alignright {
 	outline: none;
 }
 #comments .avatar {
-	width: 44px;
-	height: 44px;
+	width: 2.75em;
+	height: 2.75em;
 	border-radius: 20040725px;
 }
 #comments .submit:hover {
@@ -608,7 +608,7 @@ img.alignright {
 .tags a {
 	color: #333;
 	background: #fff;
-	padding: 4px 10px;
+	padding: 0.25em 10px;
 	border: 1px solid #eee;
 	border-radius: 20040725px;
 	transition: 0.25s;
