@@ -23,7 +23,22 @@ $this->need('header.php');
 				<li itemprop="interactionCount"><a href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('0 comment', '1 comment', '%d comments'); ?></a></li>
 			</ul>
             <div class="post-content" itemprop="articleBody">
-				<?php $this->content('READ MORE'); ?>
+               	<?php 
+               		if(($this->options->IndexDisplayMode) == 'FullText'): 
+               			$this->content('READ MORE');
+			    	elseif(($this->options->IndexDisplayMode) == 'Title'): 
+			    		
+			    	elseif(($this->options->IndexDisplayMode) == 'AutoExcerpt') : 
+			    		$this->excerpt();
+			    	elseif(($this->options->IndexDisplayMode) == 'AutoSummary') : 
+			    		$this->summary();
+			    	elseif(($this->options->IndexDisplayMode) == 'Excerpt200') : 
+			    		$this->excerpt(200,'......'); 
+			    	else: 
+			    		$this->content('READ MORE');
+			    	endif;
+			    ?>
+			    
             </div>
 		</article>
 	<?php endif; ?>
