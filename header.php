@@ -2,7 +2,17 @@
 <!DOCTYPE HTML>
 <html class="no-js">
 <head>
+    <!-- start #optimize -->
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="//secure.gravatar.com" />
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info" />
+    <link rel="dns-prefetch" href="//cdn.bootcss.com" />
 
+    <!-- 关闭百度转码 -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!-- end #optimize -->
     <meta charset="<?php $this->options->charset(); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
@@ -14,16 +24,17 @@
             'author'    =>  _t('%s 发布的文章')
         ), '', ' - '); ?><?php $this->options->title(); ?></title>
 
-    <link rel="stylesheet" href="//cdnjscn.b0.upaiyun.com/libs/normalize/2.1.3/normalize.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/necolas/normalize.css@latest/normalize.min.css">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('grid.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css'); ?>">
     <!-- <link rel="stylesheet" href="<?php $this->options->themeUrl('ripple.css'); ?>"> -->
     <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Cinzel Decorative:700"> -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
-
+    <?php if ($this->options->EnableHighlightJS == 'able' ): ?>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/highlight.js@latest/styles/atom-one-light.css">
+    <?php endif; ?>
     <!--[if lt IE 9]>
-    <script src="//cdnjscn.b0.upaiyun.com/libs/html5shiv/r29/html5.min.js"></script>
-    <script src="//cdnjscn.b0.upaiyun.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/aFarkas/html5shiv@latest/dist/html5shiv.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/scottjehl/Respond@latest/dest/respond.min.js"></script>
     <![endif]-->
 
     <?php $this->header(); ?>
@@ -33,6 +44,9 @@
 <!--[if lt IE 8]>
     <div class="browsehappy" role="dialog"><?php _e('当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>'); ?>.</div>
 <![endif]-->
+
+<noscript><div class="browsehappy" role="dialog">当前网页 <strong>需要 JavaScript</strong>.看上去您的 JavaScript 被禁用了或是您浏览器的版本太老.</a></noscript>
+
 
 <header id="header" class="clearfix" onclick="window.open('<?php $this->options->siteUrl(); ?>','_self')">
     <div class="container">

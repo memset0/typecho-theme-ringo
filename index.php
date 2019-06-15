@@ -2,10 +2,10 @@
 /**
  * 你愿意，等我回来吗？
  * 
- * @package typecho-theme-ringo
- * @author memset0
- * @version 0.0.4
- * @link https://memset0.cn
+ * @package Typecho Theme Ringo
+ * @author memset0,abc1763613206
+ * @version 0.0.5
+ * @link https://github.com/memset0/typecho-theme-ringo
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;

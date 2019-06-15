@@ -4,7 +4,7 @@
 
 <footer id="footer" role="contentinfo">
 
-	&copy; 2017 - <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
+	&copy; <?php _e($this->options->startYear) ?> - <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
 	<br/><?php if ($this->options->icpNum) { $this->options->icpNum(); }?>
 
 </footer><!-- end #footer -->
@@ -35,10 +35,12 @@ MathJax.Hub.Config({
 </script>
 <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
 
-
-<script src="https://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+<?php if ($this->options->EnableHighlightJS == 'able' ): ?>
+<script src="//cdn.jsdelivr.net/npm/highlight.js@latest/highlight.min.js"></script>
 <!-- <script src="<?php $this->options->themeUrl('ripple.js'); ?>"></script> -->
 <script> hljs.initHighlightingOnLoad(); </script>
+<?php endif; ?>
+
 <?php if ($this->options->hideStatCode == 'able' ): ?>
 	<div style="display:none">
 <?php endif; ?>

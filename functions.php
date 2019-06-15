@@ -2,6 +2,19 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 function themeConfig($form) {
+    //更友好的界面
+    _e('<div id="typecho-welcome">
+            <h3>欢迎使用<a href="https://github.com/memset0/typecho-theme-ringo">Typecho Theme Ringo</a>！ <img src="https://img.shields.io/github/stars/memset0/typecho-theme-ringo.svg?style=social"></h3>
+            <li> Brought You By <a href="https://github.com/abc1763613206">abc1763613206</a> and <a href="https://memset0.cn">memset0</a> </li>
+            <ul>
+                <li>当前最新版本 <a href="https://github.com/memset0/typecho-theme-ringo"><img src="https://img.shields.io/github/release/memset0/typecho-theme-ringo.svg?style=flat-square" alt="https://img.shields.io/github/release/memset0/typecho-theme-ringo.svg?style=flat-square" ></a> </li> 
+                <li> 请在下方进行您的主题设置。<b>务必将每一个单选框都设定一遍</b>以保证在之后的使用中不会出问题。 </li>
+                <li> 有问题请在 Github Issues 中反馈：<a href="https://github.com/memset0/typecho-theme-ringo/issues"> https://github.com/memset0/typecho-theme-ringo/issues</a>  </li>
+            </ul> 
+        </div>
+        ');
+
+
     //header 相关
 
     $displayTitle = new Typecho_Widget_Helper_Form_Element_Text(
@@ -10,7 +23,7 @@ function themeConfig($form) {
         NULL,
         _t('显示站点标题'),
         _t('
-            <p class="description">在这里填入在侧边栏显示的站点标题，如不设置 <b>默认为当前站点标题</b> ，可以通过插入 <code>&lt;br /&gt;</code> 换行！</p>
+            <p class="description">在这里填入在侧边栏显示的站点标题，如不设置 <b>默认为当前站点标题</b> ，可以通过插入 <code>&lt;br&gt;</code> 换行！</p>
             <p class="description"><b>建议一行内不超过 10 字符以确保最佳体验</b></p>
         ')
     );
@@ -22,7 +35,7 @@ function themeConfig($form) {
         NULL,
         _t('显示站点描述'),
         _t('
-            <p class="description">在这里填入在侧边栏显示的站点副标题（站点标题下方一行灰色小字），如不设置 <b>默认为站点描述</b> ，可以通过插入 <code>&lt;br /&gt;</code> 换行！
+            <p class="description">在这里填入在侧边栏显示的站点副标题（站点标题下方一行灰色小字），如不设置 <b>默认为站点描述</b> ，可以通过插入 <code>&lt;br&gt;</code> 换行！
             <p class="description"><b>建议一行内不超过 10 字符以确保最佳体验</b></p>
         ')
     );
@@ -41,8 +54,24 @@ function themeConfig($form) {
     $form->addInput($logoUrl->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
 
     //footer 相关
-    $icpNum = new Typecho_Widget_Helper_Form_Element_Text('icpNum', NULL, NULL, _t('网站备案号'), _t('在这里填入中国大陆的ICP网站备案号（无需带a标签，如 <b>浙ICP备19006255号-1</b> ），留空则不显示'));
+    
+    $IfDisplayPages = new Typecho_Widget_Helper_Form_Element_Radio('IfDisplayPages', array('able' => _t('显示'),
+            'disable' => _t('不显示'),
+        ),
+        'able',
+        _t('是否在侧边栏显示创建的页面'),
+        _t('
+            <p class="description">是否显示侧边栏的页面（多用于关于&&友情链接），<b>默认显示</b></p>
+        ')
+    );
+    $form->addInput($IfDisplayPages->addRule('required', _t('此处必须设置')));
+    
+    
+    $icpNum = new Typecho_Widget_Helper_Form_Element_Text('icpNum', NULL, NULL, _t('网站备案号'), _t('在这里填入中国大陆的ICP网站备案号（无需带a标签，如 <code>浙ICP备19006255号-1</code> ），留空则不显示'));
     $form->addInput($icpNum);
+
+    $startYear = new Typecho_Widget_Helper_Form_Element_Text('startYear', NULL, '2017', _t('网站建立年份'), _t('在这里填入您网站建立年份（显示在页面底部），<b>必须填写</b>'));
+    $form->addInput($startYear->addRule('required', _t('此处必须填写')));
     $statCode = new Typecho_Widget_Helper_Form_Element_Text('statCode', NULL, NULL, _t('站点统计代码'), _t('在这里填入 <b>带 script 标签的</b> 站点统计代码，留空则不显示。（建议您对代码进行简单的压缩）'));
     $form->addInput($statCode);
     $hideStatCode = new Typecho_Widget_Helper_Form_Element_Radio('hideStatCode', array('able' => _t('隐藏'),
@@ -55,10 +84,20 @@ function themeConfig($form) {
             <p class="description"><b>现阶段暂没有对显示内容的统计标志做特别优化，因而会出现显示错乱的问题，建议隐藏。</b></p>
         ')
     );
-    $form->addInput($hideStatCode);
+    $form->addInput($hideStatCode->addRule('required', _t('此处必须设置')));
 
     //附加功能相关
-    
+    $EnableHighlightJS = new Typecho_Widget_Helper_Form_Element_Radio('EnableHighlightJS', array('able' => _t('启用'),
+            'disable' => _t('停用'),
+        ),
+        'able',
+        _t('是否启用 HighlightJS 代码高亮功能'),
+        _t('
+            <p class="description">HighlightJS 代码高亮插件，使用<code>atom-one-light</code>。<b>默认启用</b></p>
+        ')
+    );
+    $form->addInput($EnableHighlightJS->addRule('required', _t('此处必须设置')));
+
     $EnableBusuanzi = new Typecho_Widget_Helper_Form_Element_Radio('EnableBusuanzi', array('able' => _t('启用'),
             'disable' => _t('停用'),
         ),
@@ -68,7 +107,7 @@ function themeConfig($form) {
             <a rel="nofollow" target="_blank" href="https://busuanzi.ibruce.info/">不蒜子</a>是一个即装即用的网页 js 计数脚本，目前可与主题进行对接显示访问数，<b>默认启用</b>
         ')
     );
-    $form->addInput($EnableBusuanzi);
+    $form->addInput($EnableBusuanzi->addRule('required', _t('此处必须设置')));
 
     $EnableWordsCounter = new Typecho_Widget_Helper_Form_Element_Radio('EnableWordsCounter', array('able' => _t('启用'),
             'disable' => _t('停用'),
@@ -80,7 +119,7 @@ function themeConfig($form) {
             <p class="description"><b>启用前请务必确保您安装启用好了这个插件！</b></p>
         ')
     );
-    $form->addInput($EnableWordsCounter);
+    $form->addInput($EnableWordsCounter->addRule('required', _t('此处必须设置')));
 
     $IfDisplayNone = new Typecho_Widget_Helper_Form_Element_Radio('IfDisplayNone', array('able' => _t('显示'),
             'disable' => _t('不显示'),
@@ -93,7 +132,8 @@ function themeConfig($form) {
             <p class="description">本主题已经对 none 标签进行了特殊优化使其更加美观，当然你也可以直接将其移除</p>
         ')
     );
-    $form->addInput($IfDisplayNone);
+    $form->addInput($IfDisplayNone->addRule('required', _t('此处必须设置')));
+
 
     //现阶段下该设置基本无用，注释掉好了
     /*
