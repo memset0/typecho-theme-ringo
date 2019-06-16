@@ -12,6 +12,7 @@
 * 更多的自定义功能
 
 ### 推荐引入的插件
-* [elatisy/Typecho_WordsCounter](https://github.com/elatisy/Typecho_WordsCounter)         
-* [jrotty/Highlightjs-for-typecho](https://github.com/jrotty/Highlightjs-for-typecho)
 
+* [memset0 / typecho-plugin-katex](https://github.com/memset0/typecho-plugin-katex)
+* [elatisy / Typecho_WordsCounter](https://github.com/elatisy/Typecho_WordsCounter)         
+* [jrotty / Highlightjs-for-typecho](https://github.com/jrotty/Highlightjs-for-typecho)
