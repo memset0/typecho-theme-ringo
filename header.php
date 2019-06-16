@@ -17,6 +17,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- css3-mediaqueries-js 用于尝试在上古浏览器支持自适应viewport函数 -->
+    <!--[if lt IE 9]>
+    　　<script src="https://cdn.jsdelivr.net/gh/livingston/css3-mediaqueries-js@master/css3-mediaqueries.min.js"></script>
+    <![endif]-->
     <title><?php $this->archiveTitle(array(
             'category'  =>  _t('分类 %s 下的文章'),
             'search'    =>  _t('包含关键字 %s 的文章'),
@@ -29,9 +33,8 @@
     <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css'); ?>">
     <!-- <link rel="stylesheet" href="<?php $this->options->themeUrl('ripple.css'); ?>"> -->
     <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Cinzel Decorative:700"> -->
-    <?php if ($this->options->EnableHighlightJS == 'able' ): ?>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/highlight.js@latest/styles/atom-one-light.css">
-    <?php endif; ?>
+    <script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+    
     <!--[if lt IE 9]>
     <script src="//cdn.jsdelivr.net/gh/aFarkas/html5shiv@latest/dist/html5shiv.min.js"></script>
     <script src="//cdn.jsdelivr.net/gh/scottjehl/Respond@latest/dest/respond.min.js"></script>
@@ -45,8 +48,18 @@
     <div class="browsehappy" role="dialog"><?php _e('当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>'); ?>.</div>
 <![endif]-->
 
-<noscript><div class="browsehappy" role="dialog">当前网页 <strong>需要 JavaScript</strong>.看上去您的 JavaScript 被禁用了或是您浏览器的版本太老.</a></noscript>
+<!-- 移动端适配 -->
+<link rel="stylesheet" href="<?php $this->options->themeUrl('compatible.css'); ?>">
 
+<!-- 也显示出一遍正常标题来以便适配移动端 -->
+<div style="display:none" class="compatible">
+            <a id="logo" class="site-title">
+                <?php $this->options->title();?> 
+            </a>
+            <p class="description site-description">
+                <?php $this->options->description();?>
+            </p>
+</div>
 
 <header id="header" class="clearfix" onclick="window.open('<?php $this->options->siteUrl(); ?>','_self')">
     <div class="container">
@@ -63,7 +76,9 @@
                 <?php if ($this->options->displayCoTitle) { $this->options->displayCoTitle(); }else{ $this->options->description();}?>
             </p>
         <?php endif; ?>
-        </div>
+
+        
+        
         <!-- <div class="col-mb-12">
             <nav id="nav-menu" class="clearfix" role="navigation">
                 <a <?php if($this->is('index')): ?> class="current"<?php endif; ?> href="<?php $this->options->siteUrl(); ?>"><?php _e('首页'); ?></a>

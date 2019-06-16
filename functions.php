@@ -12,11 +12,12 @@ function themeConfig($form) {
                 <li> 有问题请在 Github Issues 中反馈：<a href="https://github.com/memset0/typecho-theme-ringo/issues"> https://github.com/memset0/typecho-theme-ringo/issues</a>  </li>
             </ul> 
         </div>
+        <hr class="line"></hr>
         ');
 
 
     //header 相关
-
+    
     $displayTitle = new Typecho_Widget_Helper_Form_Element_Text(
         'displayTitle',
         NULL,
@@ -55,7 +56,8 @@ function themeConfig($form) {
 
     //footer 相关
     
-    $IfDisplayPages = new Typecho_Widget_Helper_Form_Element_Radio('IfDisplayPages', array('able' => _t('显示'),
+    $IfDisplayPages = new Typecho_Widget_Helper_Form_Element_Radio('IfDisplayPages', array(
+            'able' => _t('显示'),
             'disable' => _t('不显示'),
         ),
         'able',
@@ -65,16 +67,33 @@ function themeConfig($form) {
         ')
     );
     $form->addInput($IfDisplayPages->addRule('required', _t('此处必须设置')));
-    
+
+    $WhereToDisplaySearch = new Typecho_Widget_Helper_Form_Element_Radio('WhereToDisplaySearch', array(
+            'top' => _t('顶部'),
+            'bottom' => _t('底部'),
+            'none' => _t('不显示'),
+        ),
+        'none',
+        _t('搜索框显示位置'),
+        _t('
+            <p class="description">因个人口味而异，<b>默认不显示</b></p>
+        ')
+    );
+    $form->addInput($WhereToDisplaySearch->addRule('required', _t('此处必须设置')));
     
     $icpNum = new Typecho_Widget_Helper_Form_Element_Text('icpNum', NULL, NULL, _t('网站备案号'), _t('在这里填入中国大陆的ICP网站备案号（无需带a标签，如 <code>浙ICP备19006255号-1</code> ），留空则不显示'));
     $form->addInput($icpNum);
 
     $startYear = new Typecho_Widget_Helper_Form_Element_Text('startYear', NULL, '2017', _t('网站建立年份'), _t('在这里填入您网站建立年份（显示在页面底部），<b>必须填写</b>'));
     $form->addInput($startYear->addRule('required', _t('此处必须填写')));
-    $statCode = new Typecho_Widget_Helper_Form_Element_Text('statCode', NULL, NULL, _t('站点统计代码'), _t('在这里填入 <b>带 script 标签的</b> 站点统计代码，留空则不显示。（建议您对代码进行简单的压缩）'));
+    $statCode = new Typecho_Widget_Helper_Form_Element_Text('statCode', NULL, NULL, _t('站点统计代码'), _t('
+
+        <p class="description">在这里填入 <b>带 script 标签的</b> 站点统计代码，留空则不显示。（建议您对代码进行简单的压缩）</p>
+        <hr class="line"></hr>
+        '));
     $form->addInput($statCode);
-    $hideStatCode = new Typecho_Widget_Helper_Form_Element_Radio('hideStatCode', array('able' => _t('隐藏'),
+    $hideStatCode = new Typecho_Widget_Helper_Form_Element_Radio('hideStatCode', array(
+            'able' => _t('隐藏'),
             'disable' => _t('显示'),
         ),
         'able',
@@ -87,18 +106,10 @@ function themeConfig($form) {
     $form->addInput($hideStatCode->addRule('required', _t('此处必须设置')));
 
     //附加功能相关
-    $EnableHighlightJS = new Typecho_Widget_Helper_Form_Element_Radio('EnableHighlightJS', array('able' => _t('启用'),
-            'disable' => _t('停用'),
-        ),
-        'able',
-        _t('是否启用 HighlightJS 代码高亮功能'),
-        _t('
-            <p class="description">HighlightJS 代码高亮插件，使用<code>atom-one-light</code>。<b>默认启用</b></p>
-        ')
-    );
-    $form->addInput($EnableHighlightJS->addRule('required', _t('此处必须设置')));
 
-    $EnableBusuanzi = new Typecho_Widget_Helper_Form_Element_Radio('EnableBusuanzi', array('able' => _t('启用'),
+
+    $EnableBusuanzi = new Typecho_Widget_Helper_Form_Element_Radio('EnableBusuanzi', array(
+            'able' => _t('启用'),
             'disable' => _t('停用'),
         ),
         'able',
@@ -109,31 +120,50 @@ function themeConfig($form) {
     );
     $form->addInput($EnableBusuanzi->addRule('required', _t('此处必须设置')));
 
-    $EnableWordsCounter = new Typecho_Widget_Helper_Form_Element_Radio('EnableWordsCounter', array('able' => _t('启用'),
+    $EnableWordsCounter = new Typecho_Widget_Helper_Form_Element_Radio('EnableWordsCounter', array(
+            'able' => _t('启用'),
             'disable' => _t('停用'),
         ),
         'disable',
-        _t('是否启用 <a rel="nofollow" target="_blank" href="https://github.com/elatisy/Typecho_WordsCounter">WordsCounter</a> 功能'),
+        _t('是否启用 <a rel="nofollow" target="_blank" href="https://github.com/elatisy/Typecho_WordsCounter">WordsCounter</a> 适配功能'),
         _t('
-            <p class="description">与插件 <a rel="nofollow" href="https://github.com/elatisy/Typecho_WordsCounter">WordsCounter</a> ，配合使用，可以统计文章字数。<b>默认停用</b></p>
+            <p class="description">与插件 <a rel="nofollow" href="https://github.com/elatisy/Typecho_WordsCounter">WordsCounter</a> 配合使用，显示在侧边栏下方，可以统计文章字数。<b>默认停用</b></p>
             <p class="description"><b>启用前请务必确保您安装启用好了这个插件！</b></p>
         ')
     );
     $form->addInput($EnableWordsCounter->addRule('required', _t('此处必须设置')));
 
-    $IfDisplayNone = new Typecho_Widget_Helper_Form_Element_Radio('IfDisplayNone', array('able' => _t('显示'),
+
+    //实验性功能
+    $IfDisplayNone = new Typecho_Widget_Helper_Form_Element_Radio('IfDisplayNone', array(
+            'able' => _t('显示'),
             'disable' => _t('不显示'),
         ),
         'disable',
         _t('是否显示 none 标签'),
         _t('
-            <p class="description">是否显示文章中的 none 标签，<b>默认不显示</b></p>
+            <p class="description"><b>实验性功能</b>:是否显示文章中的 none 标签，<b>默认不显示</b></p>
             <p class="description">Typecho 的文章如果没有标签，默认会显示一个无样式的 none</p>
             <p class="description">本主题已经对 none 标签进行了特殊优化使其更加美观，当然你也可以直接将其移除</p>
         ')
     );
     $form->addInput($IfDisplayNone->addRule('required', _t('此处必须设置')));
 
+    $IndexDisplayMode = new Typecho_Widget_Helper_Form_Element_Radio('IndexDisplayMode', array(
+            'FullText' => _t('显示全文(可使用more标签截断)'),
+            'Title' => _t('仅显示标题'),
+            'AutoExcerpt' => _t('自动截断(不推荐,丢失格式)'),
+            'AutoSummary' => _t('另一种自动截断(截断第一部分标题中部分,保留格式)'),
+            'Excerpt200' => _t('总是截断前200字符(丢失格式)')
+        ),
+        'FullText',
+        _t('首页文章显示模式'),
+        _t('
+            <p class="description"><b>实验性功能</b>:重写了文章的显示部分，运用<code>excerpt</code>和<code>summary</code>标签断开</p>
+            <p class="description"><b>默认为显示全文，在其他模式下more标签可能失效。</b></p>
+        ')
+    );
+    $form->addInput($IndexDisplayMode->addRule('required', _t('此处必须设置')));
 
     //现阶段下该设置基本无用，注释掉好了
     /*

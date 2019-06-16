@@ -779,6 +779,51 @@ img.alignright {
 }
 /* 搜索 */
 
+/* 搜索(顶部) beta */
+.site-search-top {
+	width: 100%;
+	margin-left: -40px;
+	margin-right: -40px;
+	/*margin-bottom: -40px;*/
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	transition: 0.25s;
+	background-color: #fff;
+}
+.site-search-top:hover {
+	background-color: #eee;
+}
+.site-search-top #s {
+	display: block;
+	width: 100%;
+	max-height: 40px;
+	padding: 16px;
+	resize: vertical;
+	max-width: 100%;
+	margin: 0;
+	font-size: 14px;
+	background-color: #0000;
+	line-height: 1.6;
+	color: #333;
+	vertical-align: middle;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	box-shadow: none;
+	overflow: visible;
+	border-radius: 0;
+	font-family: /*Menlo,*/Monaco,Consolas,"Lucida Console","Courier New",monospace;
+	border-bottom: 1px solid #EEE;
+	transition: 0.25s;
+}
+.site-search-top .submit {
+	outline: none;
+}
+/* 搜索 */
+
+
 /* POST NEAR */
 .post-near {
 	margin-top: 40px;
