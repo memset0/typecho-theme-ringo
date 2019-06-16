@@ -6,11 +6,6 @@
 
 **这并不是一个正式发布的版本，很多功能和设置都在开发的过程中。**
 
-### 任务计划
-
-* 手机自适应
-* 更多的自定义功能
-
 ### 推荐引入的插件
 
 * [memset0 / typecho-plugin-katex](https://github.com/memset0/typecho-plugin-katex)
