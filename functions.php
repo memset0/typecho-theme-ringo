@@ -2,6 +2,7 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 function themeConfig($form) {
+
     //更友好的界面
     _e('<div id="typecho-welcome">
             <h3>欢迎使用 <a href="https://github.com/memset0/typecho-theme-ringo">Typecho Theme Ringo</a>！ <img src="https://img.shields.io/github/stars/memset0/typecho-theme-ringo.svg?style=social"></h3s>
@@ -14,7 +15,6 @@ function themeConfig($form) {
         </div>
         <hr class="line"></hr>
         ');
-
 
     //header 相关
     
