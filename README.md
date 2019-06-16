@@ -10,4 +10,3 @@
 
 * [memset0 / typecho-plugin-katex](https://github.com/memset0/typecho-plugin-katex)
 * [elatisy / Typecho_WordsCounter](https://github.com/elatisy/Typecho_WordsCounter)         
-* [jrotty / Highlightjs-for-typecho](https://github.com/jrotty/Highlightjs-for-typecho)
