@@ -12,9 +12,12 @@
 
 	<?php if ($this->options->EnableBusuanzi == 'able' ): ?>
 		<span id="busuanzi_value_site_pv">......</span> visits ·
-		<span id="busuanzi_value_site_uv">......</span> visitors ·
+		<span id="busuanzi_value_site_uv">......</span> visitors 
 	<?php endif; ?>
-		<?php if ($this->options->EnableWordsCounter == 'able' ): ?>
+	<?php if ($this->options->EnableBusuanzi == 'able' && $this->options->EnableWordsCounter == 'able' ): ?>
+	·
+	<?php endif; ?>
+	<?php if ($this->options->EnableWordsCounter == 'able' ): ?>
 		<span id="words_counter"><?php WordsCounter_Plugin::allOfCharacters(); ?></span> words
 	<?php endif; ?>
 
