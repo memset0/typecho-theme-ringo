@@ -50,6 +50,9 @@ MathJax.Hub.Config({
 </script>
 <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
 
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.12.0/highlight.pack.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+
 <?php if ($this->options->hideStatCode == 'able' ): ?>
 	<div style="display:none">
 <?php endif; ?>
