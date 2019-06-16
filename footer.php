@@ -5,7 +5,18 @@
 <footer id="footer" role="contentinfo">
 
 	&copy; <?php _e($this->options->startYear) ?> - <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
-	<br/> <?php if ($this->options->icpNum):?> <a rel="nofollow" href="http://beian.miit.gov.cn"> <?php $this->options->icpNum(); ?> </a> <?php endif;?>
+	<br />
+	<?php if ($this->options->icpNum):?> <a rel="nofollow" href="http://beian.miit.gov.cn"> <?php $this->options->icpNum(); ?> </a> <?php endif;?>
+
+	<br />
+
+	<?php if ($this->options->EnableBusuanzi == 'able' ): ?>
+		<span id="busuanzi_value_site_pv">......</span> visits ·
+		<span id="busuanzi_value_site_uv">......</span> visitors ·
+	<?php endif; ?>
+		<?php if ($this->options->EnableWordsCounter == 'able' ): ?>
+		<span id="words_counter"><?php WordsCounter_Plugin::allOfCharacters(); ?></span> words
+	<?php endif; ?>
 
 </footer><!-- end #footer -->
 
@@ -35,10 +46,6 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-
-
-
-
 
 <?php if ($this->options->hideStatCode == 'able' ): ?>
 	<div style="display:none">
