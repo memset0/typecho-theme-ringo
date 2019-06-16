@@ -67,7 +67,19 @@ function themeConfig($form) {
         ')
     );
     $form->addInput($IfDisplayPages->addRule('required', _t('此处必须设置')));
-    
+
+    $WhereToDisplaySearch = new Typecho_Widget_Helper_Form_Element_Radio('WhereToDisplaySearch', array(
+            'top' => _t('顶部'),
+            'bottom' => _t('底部'),
+            'none' => _t('不显示'),
+        ),
+        'none',
+        _t('搜索框显示位置'),
+        _t('
+            <p class="description">因个人口味而异，<b>默认不显示</b></p>
+        ')
+    );
+    $form->addInput($WhereToDisplaySearch->addRule('required', _t('此处必须设置')));
     
     $icpNum = new Typecho_Widget_Helper_Form_Element_Text('icpNum', NULL, NULL, _t('网站备案号'), _t('在这里填入中国大陆的ICP网站备案号（无需带a标签，如 <code>浙ICP备19006255号-1</code> ），留空则不显示'));
     $form->addInput($icpNum);

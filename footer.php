@@ -9,6 +9,7 @@
 
 </footer><!-- end #footer -->
 
+<?php if ($this->options->WhereToDisplaySearch == 'bottom' ): ?>
 <div class="site-search">
 	<form id="search" method="post" action="<?php $this->options->siteUrl(); ?>" role="search">
 		<label for="s" class="sr-only">搜索关键字</label>
@@ -16,7 +17,7 @@
 		<!-- <button type="submit" class="submit">搜索</button> -->
 	</form>
 </div>
-
+<?php endif; ?>
 	</div>
 
 </div><!-- end #body -->
