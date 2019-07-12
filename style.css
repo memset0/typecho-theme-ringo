@@ -895,6 +895,26 @@ ol.page-navigator > .current > a {
 }
 /* HELPBAR */
 
+/* PAGE - Archive */
+.archive-model {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.archive-month {
+	color: #444;
+	font-size: 30px;
+}
+.archive-title {
+	margin: 0;
+	padding: 0;
+	font-size: 15px;
+	font-weight: normal;
+}
+.archive-title > a {
+	color: #444 !important;
+}
+/* PAGE - Archive */
+
 pre {
 	padding-left: 40px;
 	padding-right: 40px;
