@@ -654,13 +654,19 @@ img.alignright {
 /* 文章聚合 */
 
 /* 文章 */
+.post-title {
+	font-size: 24px;
+}
+.post-meta {
+	margin-top: 0px !important;
+}
 .post-title-atpage {
-	font-size: 1.6em;
-	margin-top: 1.6em;
+	font-size: 32px;
+	margin-top: 32px;
 	text-align: center;
 }
 .post-meta-atpage {
-	margin-bottom: 4em;
+	margin-bottom: 64px;
 	text-align: center;
 }
 .post-meta * {
