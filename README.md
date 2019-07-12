@@ -12,3 +12,17 @@
 
 * [memset0 / typecho-plugin-katex](https://github.com/memset0/typecho-plugin-katex)
 * [elatisy / Typecho_WordsCounter](https://github.com/elatisy/Typecho_WordsCounter)         
+
+### 注意事项
+
+完成安装后请先进入主题配置页面完成设置。
+
+LaTeX 的支持需要使用上面的 KaTeX 插件，或使用别人开发的插件。
+
+在没有安装 Words Counter 插件或版本不兼容的情况下开启计数功能可能会导致报错。
+
+当更新后出现无法解决的问题时请先尝试切换回默认主题再切换回来并重新配置。
+
+经过尝试无法解决的问题可以直接提 issue 。
+
+手机端的适配还在咕咕咕。
