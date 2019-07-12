@@ -39,7 +39,8 @@
 <?php if ($this->options->EnableBusuanzi == 'able' ): ?>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <?php endif; ?>
-<!-- <style>.MathJax:focus {outline: none;}</style>
+
+<style>.MathJax:focus {outline: none;}</style>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
 	extensions: ["tex2jax.js"],
@@ -49,7 +50,7 @@ MathJax.Hub.Config({
 	"HTML-CSS": { availableFonts: ["TeX"] }
 });
 </script>
-<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 <script src="//cdn.jsdelivr.net/npm/highlightjs@9.12.0/highlight.pack.min.js"></script>
 <script> hljs.initHighlightingOnLoad(); </script>
