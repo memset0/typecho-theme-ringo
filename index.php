@@ -11,15 +11,6 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('header.php');
 ?>
-<?php if ($this->options->WhereToDisplaySearch == 'top' ): ?>
-	<div class="site-search-top">
-		<form id="search" method="post" action="<?php $this->options->siteUrl(); ?>" role="search">
-			<label for="s" class="sr-only">搜索关键字</label>
-			<input type="text" id="s" name="s" class="text" placeholder="在这里输入关键字哦 ~ (回车搜索)" />
-			<!-- <button type="submit" class="submit">搜索</button> -->
-		</form>
-	</div>
-	<?php endif; ?>
 <div class="col-12" id="main" role="main">
 	<?php while($this->next()): ?>
 		<article class="post post-atmain" itemscope itemtype="http://schema.org/BlogPosting" onclick="window.open('<?php $this->permalink() ?>','_self')">
