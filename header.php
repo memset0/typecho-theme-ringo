@@ -95,7 +95,7 @@
 
 <div id="body">
     <div class="container">
-        <!-- <div class="row"> -->
+        <div class="row">
 
 <?php if ($this->options->WhereToDisplaySearch == 'top' ): ?>
 	<div class="site-search-top">
