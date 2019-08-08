@@ -504,7 +504,7 @@ img.alignright {
 
 /* header */
 #header {
-	transition: 0.25s;
+	/* transition: 0.25s; */
 	font-family: "Droid Serif",
 		Georgia,
 		"Times New Roman",
