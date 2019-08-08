@@ -919,6 +919,12 @@ ol.page-navigator > .current > a {
 }
 /* PAGE - Archive */
 
+/* highlight.js - 代码高亮 */
+.hljs {
+	padding: 10px;
+	background: #fafafa !important;
+	font-family: "Fira Mono","Monaco","Menlo","Ubuntu Mono","Consolas","source-code-pro",monospace !important;
+}
 pre {
 	padding-left: 40px;
 	padding-right: 40px;
@@ -928,6 +934,7 @@ pre {
 	margin-right: -40px;
 	max-height: none;
 }
+/* highlight.js - 代码高亮 */
 
 .sidebar-foot {
 	color: #888;
