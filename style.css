@@ -22,7 +22,7 @@ a {
 }
 
 a:hover,a:active {
-	color: #444;
+	text-decoration: underline;
 }
 
 p {
@@ -121,6 +121,10 @@ textarea {
 #logo {
 	color: #333;
 	font-size: 2rem;
+}
+
+#logo:hover {
+	text-decoration: none;
 }
 
 #logo img {
