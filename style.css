@@ -669,6 +669,9 @@ img.alignright {
 	margin-top: 32px;
 	text-align: center;
 }
+.post-title-atpage a:hover {
+	text-decoration: none;
+}
 .post-meta-atpage {
 	margin-bottom: 64px;
 	text-align: center;
