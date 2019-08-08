@@ -684,7 +684,7 @@ img.alignright {
 }
 /* 文章 */
 
-/* 框架定位 */
+/* layout - 布局 & 定位 */
 #header {
 	position: fixed;
 	text-align: right;
@@ -743,7 +743,7 @@ img.alignright {
 		max-width: 70%;
 	} */
 }
-/* 框架定位 */
+/* layout - 布局 & 定位 */
 
 /* 搜索 */
 .site-search {
