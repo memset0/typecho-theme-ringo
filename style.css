@@ -630,12 +630,6 @@ img.alignright {
 	font-weight: 400;
 	color: #444 !important;
 }
-.more {
-	font-size: 80%;
-}
-.more a { 
-	color: #999 !important;
-}
 .post-atmain {
 	margin-left: -40px;
 	margin-right: -40px;
@@ -652,8 +646,22 @@ img.alignright {
 .post-atmain:hover .post-title {
 	/* letter-spacing: 5px; */
 }
-.post-atmain:hover .more {
+.more {
+	font-size: 80%;
+	margin: auto;
+	display: block;
+	width: 120px;
+	letter-spacing: 2px;
+}
+.more:hover {
+	background: #999;
 	text-decoration: underline;
+}
+.more a { 
+	color: #999 !important;
+}
+.more:hover a {
+	color: #fff !important;
 }
 /* 文章聚合 */
 
