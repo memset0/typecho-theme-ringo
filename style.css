@@ -699,13 +699,14 @@ img.alignright {
 #header {
 	position: fixed;
 	text-align: right;
-	left: 0;
+	left: calc(50% - 600px);
 	top: 40px;
-	width: calc(20% - 20px);
-	padding-left: 10%;
+	width: 185px;
+	margin-left: calc(400px - 50%);
+	padding-left: calc(50% - 400px);
 	padding-top: 40px;
 	padding-bottom: 40px;
-	padding-right: 18px;
+	padding-right: 13px;
 	border-bottom: none;
 	background: rgba(159,86,58,.03);
 	border-right: 2px solid #9f563a;
@@ -713,22 +714,22 @@ img.alignright {
 #sidebar {
 	position: fixed;
 	text-align: right;
-	left: 10%;
+	left: calc(50% - 600px);
 	bottom: 40px;
-	width: calc(20% - 20px);
+	width: 180px;
 	padding-right: 20px;
 }
 #helpbar {
 	position: fixed;
-	left: 90%;
+	left: calc(50% + 600px);
 	bottom: 40px;
 	padding-left: 20px;
 }
 #body .container {
-	margin-left: 30%;
-	margin-right: 10%;
-	width: 60%;
-	max-width: 60%;
+	margin-left: calc(50% - 400px);
+	margin-right: calc(50% - 600px);
+	width: 1000px !important;
+	max-width: 1000px !important;
 	padding: 40px;
 	background: #fcfcfc;
 	box-shadow: 0 0 24px rgba(0,0,0,0.12);
@@ -740,19 +741,43 @@ img.alignright {
 #footer {
 	margin-top: 240px;
 }
-@media(max-width:1200px) {
-	/* #header {
-		left: 5%;
+
+@media (max-width: 1200px) {
+	#header {
+		left: calc(50% - 400px);
+		margin-left: calc(200px - 50%);
+		padding-left: calc(50% - 200px);
 	}
 	#sidebar {
-		left: 5%;
+		left: calc(50% - 400px);
+	}
+	#helpbar {
+		left: calc(50% + 400px);
 	}
 	#body .container {
-		margin-left: 25%;
-		margin-right: 5%;
-		width: 70%;
-		max-width: 70%;
-	} */
+		margin-left: calc(50% - 200px);
+		margin-right: calc(50% - 400px);
+		width: 600px !important;
+		max-width: 600px !important;
+	}
+}
+
+@media (max-width: 800px) {
+	#header {
+		display: none;
+	}
+	#sidebar {
+		display: none;
+	}
+	#helpbar {
+		display: none;
+	}
+	#body .container {
+		margin-left: 0;
+		margin-right: 0;
+		width: 100% !important;
+		max-width: 100% !important;
+	}
 }
 /* layout - 布局 & 定位 */
 
