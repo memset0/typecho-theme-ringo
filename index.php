@@ -12,6 +12,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('header.php');
 ?>
 <div class="col-12" id="main" role="main">
+	<?php /* $access = new Access_Core(); echo $access->overview['pv']['all']['total']; */?>
 	<?php while($this->next()): ?>
 		<article class="post post-atmain" itemscope itemtype="http://schema.org/BlogPosting" onclick="window.open('<?php $this->permalink() ?>','_self')">
 			<h2 class="post-title" itemprop="name headline"><a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2>

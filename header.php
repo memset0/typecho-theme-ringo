@@ -11,16 +11,17 @@
     <!-- 关闭百度转码 -->
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp">
-
     <!-- end #optimize -->
     <meta charset="<?php $this->options->charset(); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
+
+    <!-- 自适应 -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <!-- css3-mediaqueries-js 用于尝试在上古浏览器支持自适应viewport函数 -->
     <!--[if lt IE 9]>
     　　<script src="https://cdn.jsdelivr.net/gh/livingston/css3-mediaqueries-js@master/css3-mediaqueries.min.js"></script>
     <![endif]-->
+
     <title><?php $this->archiveTitle(array(
             'category'  =>  _t('分类 %s 下的文章'),
             'search'    =>  _t('包含关键字 %s 的文章'),
