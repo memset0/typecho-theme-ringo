@@ -936,6 +936,13 @@ pre {
 }
 /* highlight.js - 代码高亮 */
 
+/* images - 插图 / 图片 */
+.post-content img {
+	display: block;
+	margin: auto;
+}
+/* images - 插图 / 图片 */
+
 .sidebar-foot {
 	color: #888;
 	font-size: 90%;
