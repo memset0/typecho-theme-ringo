@@ -866,7 +866,7 @@ img.alignright {
 }
 /* POST NEAR */
 
-/* 选页器 */
+/* page navigator - 选页器 */
 ol.page-navigator > li {
 	transition: 0.25s;
 }
@@ -886,7 +886,7 @@ ol.page-navigator > .current {
 ol.page-navigator > .current > a {
 	color: #9f563a;
 }
-/* 选页器 */
+/* page navigator - 选页器 */
 
 /* HELPBAR */
 #helpbar #back2top {
@@ -899,7 +899,7 @@ ol.page-navigator > .current > a {
 }
 /* HELPBAR */
 
-/* PAGE - Archive */
+/* archive page - 归档页面 */
 .archive-model {
 	padding-top: 15px;
 	padding-bottom: 15px;
@@ -917,7 +917,7 @@ ol.page-navigator > .current > a {
 .archive-title > a {
 	color: #444 !important;
 }
-/* PAGE - Archive */
+/* archive page - 归档页面 */
 
 /* highlight.js - 代码高亮 */
 .hljs {
