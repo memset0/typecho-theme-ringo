@@ -4,7 +4,7 @@
  * 
  * @package Typecho Theme Ringo
  * @author memset0, abc1763613206
- * @version 0.2.0
+ * @version 0.2.1
  * @link https://github.com/memset0/typecho-theme-ringo
  */
 
