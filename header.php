@@ -31,7 +31,7 @@
 
     <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/necolas/normalize.css@latest/normalize.min.css">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('grid.css'); ?>">
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css'); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css'); ?>?2019081001">
     <!-- <link rel="stylesheet" href="<?php $this->options->themeUrl('ripple.css'); ?>"> -->
     <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Cinzel Decorative:700"> -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/tomorrow.css">
@@ -63,32 +63,19 @@
 </div>
 
 <header id="header" class="clearfix" onclick="window.open('<?php $this->options->siteUrl(); ?>','_self')">
-    <div class="container">
-        <div class="site-name">
-        <?php if ($this->options->logoUrl): ?>
-            <a id="logo" href="<?php $this->options->siteUrl(); ?>">
-                <img src="<?php $this->options->logoUrl() ?>" alt="<?php $this->options->title() ?>" />
-            </a>
-        <?php else: ?>
-            <a id="logo" class="site-title">
-                <?php if ($this->options->displayTitle) { $this->options->displayTitle(); }else{ $this->options->title();}?> 
-            </a>
-            <p class="description site-description">
-                <?php if ($this->options->displayCoTitle) { $this->options->displayCoTitle(); }else{ $this->options->description();}?>
-            </p>
-        <?php endif; ?>
-
-        
-        
-        <!-- <div class="col-mb-12">
-            <nav id="nav-menu" class="clearfix" role="navigation">
-                <a <?php if($this->is('index')): ?> class="current"<?php endif; ?> href="<?php $this->options->siteUrl(); ?>"><?php _e('首页'); ?></a>
-                <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
-                <?php while($pages->next()): ?>
-                <a <?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
-                <?php endwhile; ?>
-            </nav>
-        </div> -->
+    <div class="site-name">
+    <?php if ($this->options->logoUrl): ?>
+        <a id="logo" href="<?php $this->options->siteUrl(); ?>">
+            <img src="<?php $this->options->logoUrl() ?>" alt="<?php $this->options->title() ?>" />
+        </a>
+    <?php else: ?>
+        <a id="logo" class="site-title">
+            <?php if ($this->options->displayTitle) { $this->options->displayTitle(); }else{ $this->options->title();}?> 
+        </a>
+        <p class="description site-description">
+            <?php if ($this->options->displayCoTitle) { $this->options->displayCoTitle(); }else{ $this->options->description();}?>
+        </p>
+    <?php endif; ?>
     </div>
 </header><!-- end #header -->
 
@@ -96,6 +83,32 @@
 
 <div id="body">
     <div class="container">
+
+<div class="small-header" id="small-header"  onclick="window.open('<?php $this->options->siteUrl(); ?>','_self')">
+    <div class="site-name">
+    <?php if ($this->options->logoUrl): ?>
+        <a id="logo" href="<?php $this->options->siteUrl(); ?>">
+            <img src="<?php $this->options->logoUrl() ?>" alt="<?php $this->options->title() ?>" />
+        </a>
+    <?php else: ?>
+        <a id="logo" class="site-title">
+            <?php if ($this->options->displayTitle) { $this->options->displayTitle(); }else{ $this->options->title();}?> 
+        </a>
+        <p class="description site-description">
+            <?php if ($this->options->displayCoTitle) { $this->options->displayCoTitle(); }else{ $this->options->description();}?>
+        </p>
+    <?php endif; ?>
+    </div>
+
+    <div class="page-links">
+    <?php if ($this->options->IfDisplayPages == 'able' ): ?>
+        <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
+        <?php while($pages->next()): ?>
+        <span><a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a></span>
+        <?php endwhile; ?>
+    <?php endif ?>
+    </div>
+</div>
 
 <?php if ($this->options->WhereToDisplaySearch == 'top' ): ?>
 	<div class="site-search-top">

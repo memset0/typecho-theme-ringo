@@ -508,7 +508,8 @@ img.alignright {
 /* = = = = = = = = = = */
 
 /* header */
-#header {
+#header,
+#small-header {
 	/* transition: 0.25s; */
 	font-family: "Droid Serif",
 		Georgia,
@@ -520,21 +521,39 @@ img.alignright {
 		"Microsoft Yahei",
 		serif;
 }
-#header:hover {
+#header:hover,
+#small-header:hover {
 	background: rgba(159, 86, 58, .06);
 	cursor: pointer !important;
 }
-#header .site-title {
+#header .site-title,
+#small-header .site-title {
 	/* letter-spacing: 2px; */
-	text-align: center;
+	/* text-align: center; */
 	font-weight: 400;
 	color: #333 !important;
 }
-#header .site-description {
+#header .site-description,
+#small-header .site-description {
 	color: #666;
 	font-style: normal;
 	font-size: 14px;
 	line-height: 20px;
+}
+#small-header {
+	text-align: center;
+}
+#small-header .page-links {
+	margin-top: 20px;
+}
+#small-header .page-links span:before {
+	content: ' · ';
+	margin-left: 10px;
+	margin-right: 10px;
+}
+#small-header .page-links span:first-child:before {
+	content: '';
+	margin: 0;
 }
 /* header */
 
@@ -701,6 +720,15 @@ img.alignright {
 /* 文章 */
 
 /* layout - 布局 & 定位 */
+#small-header {
+	display: none;
+	margin: -40px;
+	margin-bottom: 0;
+	padding: 40px 40px 28px;
+	background: rgba(159,86,58,.03);
+	box-shadow: 0 0 24px rgba(0,0,0,0.12);
+	border-bottom: 2px solid #9f563a;
+}
 #header {
 	position: fixed;
 	text-align: right;
@@ -768,6 +796,9 @@ img.alignright {
 }
 
 @media (max-width: 800px) {
+	#small-header {
+		display: block;
+	}
 	#header {
 		display: none;
 	}
