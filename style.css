@@ -199,6 +199,9 @@ textarea {
 	padding: 15px 0 20px;
 	border-bottom: 1px solid #EEE;
 }
+.post:nth-last-of-type(1) {
+	border: none;
+}
 
 .post-title {
 	margin: .83em 0;
@@ -265,7 +268,7 @@ textarea {
 
 .page-navigator {
 	list-style: none;
-	margin: 25px 0;
+	margin: 50px 0;
 	padding: 0;
 	text-align: center;
 }
@@ -637,12 +640,16 @@ img.alignright {
 	color: #333;
 	background: #fff;
 	padding: 4px 10px;
-	border: 1px solid #eee;
 	border-radius: 20040725px;
 	transition: 0.25s;
+	box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
 }
 .tags a:hover {
 	background: #eee;
+	text-decoration: none;
+}
+.tags .none-tag {
+	
 }
 /* 标签 */ 
 
@@ -772,7 +779,7 @@ img.alignright {
 	margin-right: 30px;
 }
 #footer {
-	margin-top: 240px;
+	margin-top: 0px;
 }
 
 @media (max-width: 1200px) {
@@ -939,24 +946,35 @@ img.alignright {
 /* POST NEAR */
 
 /* page navigator - 选页器 */
-ol.page-navigator > li {
-	transition: 0.25s;
-}
-ol.page-navigator > li > a {
-	color: #000;
+.page-navigator li {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	text-align: center;
+	line-height: 40px;
 	background: #fff;
+	transition: 0.25s ease;
+	border-radius: 20040725px;
+	box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
 }
-ol.page-navigator > li:hover {
+.page-navigator li a {
+	background: #0000;
+	color: #444;
+	transition: 0.25s ease;
+}
+.page-navigator li:hover {
 	background: #eee;
 }
-ol.page-navigator > li:hover > a {
-	color: #9f563a;
+.page-navigator li:hover a {
+	background: #0000;
 }
-ol.page-navigator > .current {
-	background: #eee;
+.page-navigator li.current {
+	background: #9f563a;
 }
-ol.page-navigator > .current > a {
-	color: #9f563a;
+.page-navigator li.current a {
+	background: #0000;
+	color: #fff;
 }
 /* page navigator - 选页器 */
 

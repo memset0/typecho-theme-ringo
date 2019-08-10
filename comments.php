@@ -6,7 +6,7 @@
     
     <?php $comments->listComments(); ?>
 
-    <?php $comments->pageNav('&laquo; 前一页', '后一页 &raquo;'); ?>
+    <?php $comments->pageNav('&laquo;', '&raquo;'); ?>
     
     <?php endif; ?>
 

@@ -17,7 +17,7 @@
         <?php if ($this->options->IfDisplayNone == 'disable' ): ?>
         <p itemprop="keywords" class="tags"><?php $this->tags(' ', true, ''); ?></p>
         <?php else: ?>
-        <p itemprop="keywords" class="tags"><?php $this->tags(' ', true, '<a href="#" >none</a>'); ?></p>
+        <p itemprop="keywords" class="tags"><?php $this->tags(' ', true, '<a href="#" class="none-tag">本文没有标签。</a>'); ?></p>
         <?php endif; ?>
     </article>
 
