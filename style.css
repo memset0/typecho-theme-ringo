@@ -653,7 +653,7 @@ img.alignright {
 }
 /* 标签 */ 
 
-/* 文章聚合 */
+/* index - 文章聚合 */
 .post-title {
 	margin: 0.5em 0;
 }
@@ -683,18 +683,20 @@ img.alignright {
 	display: block;
 	width: 120px;
 	letter-spacing: 2px;
+	border: 1px solid #0000;
 }
 .more:hover {
-	background: #999;
-	text-decoration: underline;
+	border: 1px solid #9f563a;
+	/* text-decoration: underline;	 */
 }
 .more a { 
 	color: #999 !important;
 }
 .more:hover a {
-	color: #fff !important;
+	color: #9f563a !important;
+	text-decoration: none;	
 }
-/* 文章聚合 */
+/* index - 文章聚合 */
 
 /* 文章 */
 .post-title {
