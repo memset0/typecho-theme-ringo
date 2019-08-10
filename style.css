@@ -63,20 +63,6 @@ blockquote {
 	color: #666;
 }
 
-table {
-	border: 1px solid #ddd;
-	width: 100%;
-}
-
-table th,table td {
-	padding: 5px 10px;
-	border: 1px solid #eee;
-}
-
-table th {
-	background: #f3f3f3;
-}
-
 h1,h2,h3,h4,h5,h6 {
 	font-family: "Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft Yahei",sans-serif;
 }
@@ -1049,3 +1035,27 @@ pre {
 		"Microsoft Yahei",
 		serif;
 }
+
+/* table - 表格 */
+table {
+	border: 1px solid #eee;
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0 !important;
+	/* box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08); */
+}
+table th,table td {
+	padding: 5px 10px;
+	line-height: 30px;
+	border: 1px solid #eee;
+}
+table th {
+	background: #eee;
+}
+table tr {
+	transition: 0.15s ease;
+}
+table tr:hover {
+	background: #eee;
+}
+/* table - 表格 */
